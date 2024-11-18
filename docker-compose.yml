@@ -1,0 +1,16 @@
+
+
+services:
+  sukses-airflow:
+    image: sukses-airflow:latest
+
+    volumes:
+      - ./airflow:/opt/airflow
+    
+    ports:
+      - "8080:8080"
+    command: airflow standalone
+
+  sukses-smtp:
+    image: bytemark/smtp
+    restart: always
